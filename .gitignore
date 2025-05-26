@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.idea/
+.vscode/
+*.sqlite
+*.db
+
+# dbt
+target/
+dbt_packages/
