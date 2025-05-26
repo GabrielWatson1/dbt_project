@@ -2,3 +2,4 @@ requests
 pandas
 dbt-duckdb
 duckdb
+matplotlib
