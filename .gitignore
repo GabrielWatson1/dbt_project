@@ -13,3 +13,7 @@ venv/
 # dbt
 target/
 dbt_packages/
+dbt_project/dev.duckdb
+dev.duckdb
+logs/dbt.log
+logs/dbt.log
