@@ -2,20 +2,27 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: people
+    description: "Contains Star Wars character data extracted from the swapi API"
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
+      - name: name
+        description: "The name of the character"
+        tests:
           - not_null
-
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
           - unique
+      - name: height
+        description: "Height of the character in centimeters"
+        tests:
           - not_null
+      - name: mass
+        description: "Mass of the character in kilograms"
+      - name: hair_color
+        description: "Hair color of the character"
+      - name: skin_color
+        description: "Skin color of the character"
+      - name: eye_color
+        description: "Eye color of the character"
+      - name: birth_year
+        description: "Year of birth of the character"
+      - name: gender
+        description: "Gender of the character"
