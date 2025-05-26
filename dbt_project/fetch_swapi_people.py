@@ -8,7 +8,7 @@ def fetch_people():
 
     while url:
         print(f"Fetching: {url}")
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         response.raise_for_status()
         data = response.json()
         people.extend(data['results'])
