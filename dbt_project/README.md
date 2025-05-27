@@ -1,15 +1,44 @@
 Welcome to your new dbt project!
 
-### Using the starter project
+# Star Wars People Data Pipeline with dbt and DuckDB
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Overview
 
+This project downloads Star Wars character data from the SWAPI API, processes it using dbt and DuckDB into dimension and fact models, and generates visualizations for key metrics.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+---
+
+## Prerequisites
+
+- Python 3.8+
+- Virtual environment (`venv`) set up
+- DuckDB Python package
+- dbt version 1.9.4
+- Required Python packages listed in `requirements.txt`
+
+---
+
+## Setup and Usage
+
+1. **Activate your virtual environment**
+
+   ```bash
+   source venv/Scripts/activate    # Windows PowerShell
+   # or
+   source venv/bin/activate        # Linux/macOS terminal
+
+2. **Install required packages**
+    pip install -r requierments.txt
+
+3. **Download the raw data**
+    python fetch_swapi_people.py
+
+4. **Load seed data into DuckDB**
+    dbt seed --select swapi_people
+
+5. **Run dbt models to build dimension and fact tables**
+    dbt run
+
+6. **Create Visuals**
+    python visualize_metrics.py
+
