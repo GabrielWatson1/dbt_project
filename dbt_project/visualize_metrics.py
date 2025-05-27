@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import duckdb
 
 # Query the fact_people_metrics model
-con = duckdb.connect("dbt_project/dev.duckdb")  # Adjust path if needed
+con = duckdb.connect("dev.duckdb")
 
 query = """
     SELECT *
