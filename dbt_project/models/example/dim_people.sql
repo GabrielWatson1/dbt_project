@@ -6,7 +6,7 @@ select
     end as height,
     case
       when mass = 'unknown' then null
-      else cast(mass as float)
+      else cast(replace(mass, ',', '') as float)
     end as mass,
     birth_year,
     gender
