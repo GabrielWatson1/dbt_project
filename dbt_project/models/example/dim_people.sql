@@ -2,7 +2,7 @@ select
     name,
     case 
       when height = 'unknown' then null
-      else cast(height as float)
+      else cast(replace(height, ',', '') as float)
     end as height,
     case
       when mass = 'unknown' then null
