@@ -1,7 +1,13 @@
 select
-   name
-  ,height
-  ,mass
-  ,gender
-  ,birth_year
+    name,
+    case 
+      when height = 'unknown' then null
+      else cast(height as float)
+    end as height,
+    case
+      when mass = 'unknown' then null
+      else cast(mass as float)
+    end as mass,
+    birth_year,
+    gender
 from {{ ref('swapi_people') }}
