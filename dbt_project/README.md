@@ -28,17 +28,22 @@ This project downloads Star Wars character data from the SWAPI API, processes it
    source venv/bin/activate        # Linux/macOS terminal
 
 2. **Install required packages**
+   ```bash
     pip install -r requierments.txt
 
 3. **Download the raw data**
+    ```bash
     python fetch_swapi_people.py
 
 4. **Load seed data into DuckDB**
+    ```bash
     dbt seed --select swapi_people
 
 5. **Run dbt models to build dimension and fact tables**
+    ```bash
     dbt run
 
 6. **Create Visuals**
+    ```bash
     python visualize_metrics.py
 
